@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnet-mvc-svg")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7076dc92029be32bd543fe3ced06f7e6988393e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1950cd590ac162ab54b2b4ed8fe2a351ecd6145f")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet-mvc-svg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet-mvc-svg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
