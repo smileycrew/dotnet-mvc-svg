@@ -26,10 +26,18 @@ public class dotnet_mvc_svgDbContext : DbContext
             Message = "#Superman is the best that ever lived!"
         });
 
-        modelBuilder.Entity<Contestant>().HasData(new Contestant
-        {
-            Id = 1,
-            Name = "Superman"
-        });
+        modelBuilder.Entity<Contestant>().HasData(
+        [
+            new()
+            {
+                Id = 1,
+                Name = "Superman"
+            },
+            new()
+            {
+                Id = 2,
+                Name = "Goku"
+            }
+        ]);
     }
 }

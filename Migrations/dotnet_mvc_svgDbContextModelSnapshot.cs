@@ -42,6 +42,8 @@ namespace dotnet_mvc_svg.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ContestantId");
+
                     b.ToTable("Comment");
 
                     b.HasData(
@@ -49,7 +51,7 @@ namespace dotnet_mvc_svg.Migrations
                         {
                             Id = 1,
                             ContestantId = 1,
-                            DateAdded = new DateTime(2024, 6, 28, 1, 51, 10, 972, DateTimeKind.Local).AddTicks(2940),
+                            DateAdded = new DateTime(2024, 6, 28, 16, 39, 58, 143, DateTimeKind.Local).AddTicks(5040),
                             Message = "#Superman is the best that ever lived!"
                         });
                 });
@@ -75,7 +77,23 @@ namespace dotnet_mvc_svg.Migrations
                         {
                             Id = 1,
                             Name = "Superman"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Goku"
                         });
+                });
+
+            modelBuilder.Entity("dotnet_mvc_svg.Models.Comment", b =>
+                {
+                    b.HasOne("dotnet_mvc_svg.Models.Contestant", "Contestant")
+                        .WithMany()
+                        .HasForeignKey("ContestantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contestant");
                 });
 #pragma warning restore 612, 618
         }
