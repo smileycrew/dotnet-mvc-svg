@@ -1,4 +1,4 @@
-namespace dotnet_mvc_svg.Models.DTOs
+namespace DotnetMvcSvg.Models.DTOs
 {
     public class ContestantDTO
     {

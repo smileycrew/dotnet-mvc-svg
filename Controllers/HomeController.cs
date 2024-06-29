@@ -1,19 +1,19 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using dotnet_mvc_svg.Models;
-using dotnet_mvc_svg.Data;
-using dotnet_mvc_svg.Models.DTOs;
+using DotnetMvcSvg.Models;
+using DotnetMvcSvg.Data;
+using DotnetMvcSvg.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 
-namespace dotnet_mvc_svg.Controllers;
+namespace DotnetMvcSvg.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly dotnet_mvc_svgDbContext _context;
+    private readonly DotnetMvcSvgDbContext _context;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(dotnet_mvc_svgDbContext context, ILogger<HomeController> logger)
+    public HomeController(DotnetMvcSvgDbContext context, ILogger<HomeController> logger)
     {
         _context = context;
         _logger = logger;

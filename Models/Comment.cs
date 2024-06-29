@@ -1,4 +1,4 @@
-namespace dotnet_mvc_svg.Models
+namespace DotnetMvcSvg.Models
 {
     public class Comment
     {

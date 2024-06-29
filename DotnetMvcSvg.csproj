@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>dotnet_mvc_svg</RootNamespace>
+    <RootNamespace>DotnetMvcSvg</RootNamespace>
     <UserSecretsId>ccb46534-3be9-4c5e-bd87-12887222151f</UserSecretsId>
   </PropertyGroup>
 

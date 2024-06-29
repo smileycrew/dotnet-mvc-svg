@@ -1,15 +1,15 @@
-using dotnet_mvc_svg.Models;
+using DotnetMvcSvg.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace dotnet_mvc_svg.Data;
-public class dotnet_mvc_svgDbContext : DbContext
+namespace DotnetMvcSvg.Data;
+public class DotnetMvcSvgDbContext : DbContext
 {
     private readonly IConfiguration _configuration;
 
     public DbSet<Comment> Comment { get; set; }
     public DbSet<Contestant> Contestant { get; set; }
 
-    public dotnet_mvc_svgDbContext(DbContextOptions<dotnet_mvc_svgDbContext> context, IConfiguration config) : base(context)
+    public DotnetMvcSvgDbContext(DbContextOptions<DotnetMvcSvgDbContext> context, IConfiguration config) : base(context)
     {
         _configuration = config;
     }
