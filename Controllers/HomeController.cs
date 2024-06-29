@@ -18,11 +18,18 @@ public class HomeController : Controller
         _context = context;
         _logger = logger;
     }
-
-    public IActionResult Index()
+    [HttpGet("{contestantName?}")]
+    public IActionResult Index(string? contestantName)
     {
         List<Comment> comments = _context.Comment.Include((comment) => comment.Contestant).ToList();
         List<Contestant> contestants = _context.Contestant.ToList();
+
+        if (contestantName != null)
+        {
+            Contestant contestant = FindContestant(contestantName);
+
+            comments = comments.Where((comment) => comment.ContestantId == contestant.Id).ToList();
+        }
 
         HomeDTO homeDTO = new()
         {
@@ -50,7 +57,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult Index(string userComment)
+    public IActionResult SaveComment(string userComment)
     {
         // goal of this method is JUST to take the data then save it
         // eventhing in between needs to be done elsewhere
@@ -75,7 +82,7 @@ public class HomeController : Controller
             _context.SaveChanges();
         }
 
-        return RedirectToAction();
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -103,6 +110,7 @@ public class HomeController : Controller
 
     public Contestant FindContestant(string contestantName)
     {
+        // TO DO THIS SHOULD INVOKE THE LOWERCASE
         Contestant? contestant = _context.Contestant.FirstOrDefault((contestant) => contestant.Name.ToLower() == contestantName);
 
         if (contestant == null) throw new Exception();

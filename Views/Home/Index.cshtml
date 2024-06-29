@@ -5,10 +5,10 @@
 }
 
 <div class="text-center">
-    <div class="d-flex">
-        <div class="d-flex flex-column gap-3">
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column gap-3 w-100">
             <h1 class="display-4 fst-italic fw-bold">S<span class="display-3 fw-bold">V</span>G</h1>
-            <form asp-action="Index" class="border border-2 d-flex flex-fill flex-column gap-3 p-3 rounded">
+            <form asp-action="SaveComment" class="border border-2 d-flex flex-fill flex-column gap-3 p-3 rounded">
                 <textarea asp-for="UserComment" class="border-0 form-control" id="textareaEl"
                     placeholder="Enter comment here, remember to #hashtag the contestant" rows="3"
                     style="resize: none;"></textarea>
@@ -40,8 +40,9 @@
         <ul class="d-flex flex-column gap-3">
             @foreach (var contestant in Model.Contestants)
             {
-                <li class="border-0 list-group-item">
-                    <a class="border link-secondary rounded-pill text-decoration-none" href="#superman">
+                <li class="border-0 list-group-item text-start">
+                    <a class="bg-secondary px-3 py-2 rounded-pill text-decoration-none text-white"
+                        href="@($"{contestant.Name.ToLower()}")">
                         <span>@contestant.Name</span>
                     </a>
                 </li>
