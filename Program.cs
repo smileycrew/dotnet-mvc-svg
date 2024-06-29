@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 // allows our api endpoints to access the database through Entity Framework Core
-builder.Services.AddNpgsql<dotnet_mvc_svgDbContext>(builder.Configuration["dotnet-mvc-svgDbConnectionString"]);
+builder.Services.AddNpgsql<dotnet_mvc_svgDbContext>(builder.Configuration["dotnet_mvc_svgDbConnectionString"]);
 
 // Set the JSON serializer options
 builder.Services.Configure<JsonOptions>(options =>
